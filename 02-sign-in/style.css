@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Rubik:wght@400;600&display=swap');
+
+:root {
+    --primary-color: #ed5967;
+    --white-color: #ffffff;
+    --radius: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Rubik, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--white-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.form-wrapper img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.login {
+    position: relative;
+    /* background-color: var(--white-color); */
+    padding: 2em;
+    border-radius: var(--radius);
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 25px 23px rgb(0 0 0 / 30%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+}
+
+form div {
+    position: relative;
+    margin: 2em 0;
+}
+
+form div:not(.checkbox) input {
+    outline: 0;
+    width: 100%;
+    height: 50px;
+    padding-left: 1em;
+    border-radius: var(--radius);
+    box-sizing: border-box;
+
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--white-color);
+}
+
+form div:not(.checkbox) label {
+    position: absolute;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-45%);
+    transition: all .3s;
+}
+
+form div i {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    left: auto;
+    transform: translateY(-45%);
+}
+
+form div:not(.checkbox) input:focus ~ label,
+form div:not(.checkbox) input:not(:placeholder-shown) ~ label {
+    top: -10px;
+    color: var(--primary-color);
+    font-size: 12px;
+}
+
+form .checkbox {
+    text-align: left;
+    margin-top: -1.5em;
+    display: flex;
+    align-items: center;
+    /* for the gap between the "checkbox" and "remember me"*/
+    gap: 0.5em;
+    /* padding-left: 0.5em; */
+}
+
+form .checkbox label {
+    font-size: 14px;
+}
+
+/* style checkbox */
+form .checkbox input {
+    appearance: none;  /* make the checkbox disappera */
+
+    position: relative;
+    margin: 0;
+    width: 1em;
+    height: 1em;
+    border: 1px solid rgb(255 255 255 / 15%);
+    border-radius: var(--radius);
+    cursor: pointer;
+}
+form .checkbox input::before{
+    content: '';    
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    /* make the little squre central */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.6);
+
+    border-radius: var(--radius);
+    background-color: rgb(255 255 255 / 15%);
+    transition: transform .3s, background-color .3s, border-color .3s;
+}
+form .checkbox input:checked {
+    border-color: var(--primary-color);
+}
+form .checkbox input:checked::before {
+    background-color: var(--primary-color);
+    transform: translate(-50%, -50%) scale(1.0);
+    /* transition: all .3s; */
+}
+/* style ends */
+
+
+form div button {
+    border: 0;
+    outline: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color .3s;
+    font-family: Rubik, sans-serif;
+    font-size: 1em;
+}
+form div button:hover {
+    background-color: #90465f;
+}
+
+form .split {
+    display: flex;
+    justify-content: space-between;
+}
+form .split a:hover {
+    text-decoration: underline;
+}
